@@ -8,6 +8,8 @@ Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.6/%{name}-%{version}.tar.bz2
 # Source0-md5:	88cef74f116ba3272d1cec46f6566d85
 URL:		http://www.gnome.org/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	gconfmm-devel >= 2.6.0
 BuildRequires:	gnome-vfsmm-devel >= 2.6.0
 # "We would need libbonobuimm to support Bonobo::Dock, but it's not worth the bother"
@@ -16,6 +18,7 @@ BuildRequires:	libglademm-devel >= 2.4.0
 BuildRequires:	libgnomecanvasmm-devel >= 2.6.0
 BuildRequires:	libgnomemm-devel >= 2.6.0
 BuildRequires:	libgnomeui-devel >= 2.6.0
+BuildRequires:	libtool >= 2:1.4d
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -59,6 +62,10 @@ Biblioteka statyczna libgnomeuimm.
 %setup -q
 
 %build
+%{__libtoolize}
+%{__aclocal} -I scripts
+%{__autoconf}
+%{__automake}
 %configure \
 	--enable-static
 
