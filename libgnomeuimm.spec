@@ -1,18 +1,19 @@
 Summary:	C++ wrappers for libgnomeui
 Summary(pl):	Interfejsy C++ dla libgnomeui
 Name:		libgnomeuimm
-Version:	2.5.3
+Version:	2.5.4
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	f96cb19ab08a722da655a3f1d858e98e
+# Source0-md5:	75a62879be987fd7c3bc7e6781cc673f
 URL:		http://www.gnome.org/
 BuildRequires:	gconfmm-devel >= 2.5.1
+BuildRequires:	gnome-vfsmm-devel >= 2.5.3
 # "We would need libbonobuimm to support Bonobo::Dock, but it's not worth the bother"
 #BuildRequires:	libbonobouimm-devel >= 1.3.6
 BuildRequires:	libglademm-devel >= 2.3.3
-BuildRequires:	libgnomecanvasmm-devel >= 2.5.1
+BuildRequires:	libgnomecanvasmm-devel >= 2.5.2
 BuildRequires:	libgnomemm-devel >= 2.5.1
 BuildRequires:	libgnomeui-devel >= 2.6.0
 BuildRequires:	pkgconfig
@@ -30,8 +31,9 @@ Summary(pl):	Pliki nag³ówkowe dla libgnomeuimm
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gconfmm-devel >= 2.5.1
+Requires:	gnome-vfsmm-devel >= 2.5.3
 Requires:	libglademm-devel >= 2.3.3
-Requires:	libgnomecanvasmm-devel >= 2.5.1
+Requires:	libgnomecanvasmm-devel >= 2.5.2
 Requires:	libgnomemm-devel >= 2.5.1
 Requires:	libgnomeui-devel >= 2.6.0
 
