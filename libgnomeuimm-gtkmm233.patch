@@ -1,0 +1,29 @@
+diff -urN aa/libgnomeuimm-2.5.0/examples/iconlist/iconlist2.cc libgnomeuimm-2.5.0/examples/iconlist/iconlist2.cc
+--- aa/libgnomeuimm-2.5.0/examples/iconlist/iconlist2.cc	2003-11-04 19:28:15.000000000 +0100
++++ libgnomeuimm-2.5.0/examples/iconlist/iconlist2.cc	2004-02-07 15:52:18.326757640 +0100
+@@ -14,7 +14,7 @@
+     virtual void on_select_icon(int icon, GdkEvent* event);
+     virtual void on_unselect_icon(int icon, GdkEvent* event);
+     virtual void on_drag_data_get(const Glib::RefPtr<Gdk::DragContext>& context,
+-                                     GtkSelectionData* data,
++                                     Gtk::SelectionData& data,
+                                      guint info,
+                                      guint time);
+     virtual void on_drag_data_delete(const Glib::RefPtr<Gdk::DragContext>& context);
+@@ -60,14 +60,13 @@
+ 
+ void 
+ TestIconList::on_drag_data_get(const Glib::RefPtr<Gdk::DragContext>& context,
+-                                  GtkSelectionData* data,
++                                  Gtk::SelectionData& data,
+                                   guint info,
+                                   guint time)
+ {
+     Gnome::UI::IconList::on_drag_data_get(context, data, info, time);
+     char* name = (char*) get_icon_data(m_selected);
+-    gtk_selection_data_set(data,
+-                            data->target,
++    data.set(data.get_target(),
+                             8, 
+                             (const guchar*) name,
+                             strlen(name));
