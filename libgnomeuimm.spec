@@ -9,12 +9,13 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.0/%{name}-%{version}.t
 # Source0-md5:	a67bffbeb31c3ab519320953f7d83b37
 URL:		http://www.gnome.org/
 BuildRequires:	gconfmm-devel >= 2.0.1-2
-BuildRequires:	gtkmm-devel >= 2.2.6
-BuildRequires:	libbonobouimm-devel >= 1.3.6
+# "We would need libbonobuimm to support Bonobo::Dock, but it's not worth the bother"
+#BuildRequires:	libbonobouimm-devel >= 1.3.6
 BuildRequires:	libglademm-devel >= 2.1.0
-Buildrequires:	libgnomecanvasmm-devel >= 2.0.1
+BuildRequires:	libgnomecanvasmm-devel >= 2.0.1
 BuildRequires:	libgnomemm-devel >= 1.3.10-2
 BuildRequires:	libgnomeui-devel >= 2.4.0
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,6 +29,11 @@ Summary:	Devel files for libgnomeuimm
 Summary(pl):	Pliki nag³ówkowe dla libgnomeuimm
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
+Requires:	gconfmm-devel >= 2.0.1-2
+Requires:	libglademm-devel >= 2.1.0
+Requires:	libgnomecanvasmm-devel >= 2.0.1
+Requires:	libgnomemm-devel >= 1.3.10-2
+Requires:	libgnomeui-devel >= 2.4.0
 
 %description devel
 Devel files for libgnomeuimm.
@@ -52,7 +58,7 @@ Biblioteka statyczna libgnomeuimm.
 
 %build
 %configure \
-	--enable-static=yes
+	--enable-static
 
 %{__make}
 
@@ -70,14 +76,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc AUTHORS ChangeLog NEWS TODO
 %attr(755,root,root) %{_libdir}/libgnomeuimm*.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/%{name}-2.0
+%attr(755,root,root) %{_libdir}/libgnomeuimm*.so
 %{_libdir}/libgnomeuimm*.la
-%{_libdir}/libgnomeuimm*.so
 %{_libdir}/%{name}-2.0
+%{_includedir}/%{name}-2.0
 %{_pkgconfigdir}/%{name}-2.0.pc
 
 %files static
