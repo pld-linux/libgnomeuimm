@@ -2,7 +2,7 @@ Summary:	C++ wrappers for libgnomeui
 Summary(pl):	Interfejsy C++ dla libgnomeui
 Name:		libgnomeuimm
 Version:	2.0.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.0/%{name}-%{version}.tar.bz2
@@ -13,7 +13,7 @@ BuildRequires:	gconfmm-devel >= 2.0.1-2
 #BuildRequires:	libbonobouimm-devel >= 1.3.6
 BuildRequires:	libglademm-devel >= 2.1.0
 BuildRequires:	libgnomecanvasmm-devel >= 2.0.1
-BuildRequires:	libgnomemm-devel >= 1.3.10-2
+BuildRequires:	libgnomemm-devel >= 2.0.0-2
 BuildRequires:	libgnomeui-devel >= 2.4.0
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -32,7 +32,7 @@ Requires:	%{name} = %{version}
 Requires:	gconfmm-devel >= 2.0.1-2
 Requires:	libglademm-devel >= 2.1.0
 Requires:	libgnomecanvasmm-devel >= 2.0.1
-Requires:	libgnomemm-devel >= 1.3.10-2
+Requires:	libgnomemm-devel >= 2.0.0-2
 Requires:	libgnomeui-devel >= 2.4.0
 
 %description devel
