@@ -42,7 +42,7 @@ Devel files for libgnomeuimm.
 Pliki nag³ówkowe dla libgnomeuimm.
 
 %package static
-Summary:	libgnomecanvasmm static library
+Summary:	libgnomeuimm static library
 Summary(pl):	Biblioteka statyczna libgnomeuimm
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
