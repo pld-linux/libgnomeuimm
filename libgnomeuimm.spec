@@ -1,23 +1,23 @@
 Summary:	C++ wrappers for libgnomeui
 Summary(pl):	Interfejsy C++ dla libgnomeui
 Name:		libgnomeuimm
-Version:	2.10.0
+Version:	2.12.0
 Release:	1
 License:	GPL
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomeuimm/2.10/%{name}-%{version}.tar.bz2
-# Source0-md5:	3ec51ceca78fcccff3df940689f8538b
+Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomeuimm/2.12/%{name}-%{version}.tar.bz2
+# Source0-md5:	50ee34ec10c4527f1dc49bb12d0e0954
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gconfmm-devel >= 2.10.0
-BuildRequires:	gnome-vfsmm-devel >= 2.10.0
+BuildRequires:	gconfmm-devel >= 2.12.0
+BuildRequires:	gnome-vfsmm-devel >= 2.12.0
 # "We would need libbonobuimm to support Bonobo::Dock, but it's not worth the bother"
 #BuildRequires:	libbonobouimm-devel >= 1.3.6
-BuildRequires:	libglademm-devel >= 2.6.0
-BuildRequires:	libgnomecanvasmm-devel >= 2.10.0
-BuildRequires:	libgnomemm-devel >= 2.10.0
-BuildRequires:	libgnomeui-devel >= 2.10.0
+BuildRequires:	libglademm-devel >= 2.6.1
+BuildRequires:	libgnomecanvasmm-devel >= 2.12.0
+BuildRequires:	libgnomemm-devel >= 2.12.0
+BuildRequires:	libgnomeui-devel >= 2.12.0
 BuildRequires:	libtool >= 2:1.4d
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
