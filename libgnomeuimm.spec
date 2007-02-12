@@ -1,5 +1,5 @@
 Summary:	C++ wrappers for libgnomeui
-Summary(pl):	Interfejsy C++ dla libgnomeui
+Summary(pl.UTF-8):   Interfejsy C++ dla libgnomeui
 Name:		libgnomeuimm
 Version:	2.16.0
 Release:	1
@@ -26,12 +26,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 C++ wrappers for libgnomeui.
 
-%description -l pl
+%description -l pl.UTF-8
 Interfejsy C++ dla libgnomeui.
 
 %package devel
 Summary:	Devel files for libgnomeuimm
-Summary(pl):	Pliki nag≥Ûwkowe dla libgnomeuimm
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe dla libgnomeuimm
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gconfmm-devel >= 2.16.0
@@ -44,19 +44,19 @@ Requires:	libgnomeui-devel >= 2.15.91
 %description devel
 Devel files for libgnomeuimm.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe dla libgnomeuimm.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe dla libgnomeuimm.
 
 %package static
 Summary:	libgnomeuimm static library
-Summary(pl):	Biblioteka statyczna libgnomeuimm
+Summary(pl.UTF-8):   Biblioteka statyczna libgnomeuimm
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 libgnomeuimm static library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka statyczna libgnomeuimm.
 
 %prep
