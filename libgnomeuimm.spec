@@ -3,8 +3,8 @@ Summary(pl.UTF-8):	Interfejsy C++ dla libgnomeui
 Name:		libgnomeuimm
 Version:	2.20.0
 Release:	1
-License:	GPL v2
-Group:		Libraries
+License:	LGPL v2+
+Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnomeuimm/2.20/%{name}-%{version}.tar.bz2
 # Source0-md5:	350d3424247611a009432395aff8619f
 URL:		http://www.gnome.org/
@@ -32,7 +32,7 @@ Interfejsy C++ dla libgnomeui.
 %package devel
 Summary:	Devel files for libgnomeuimm
 Summary(pl.UTF-8):	Pliki nagłówkowe dla libgnomeuimm
-Group:		Development/Libraries
+Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gconfmm-devel >= 2.20.0
 Requires:	gnome-vfsmm-devel >= 2.20.0
@@ -50,7 +50,7 @@ Pliki nagłówkowe dla libgnomeuimm.
 %package static
 Summary:	libgnomeuimm static library
 Summary(pl.UTF-8):	Biblioteka statyczna libgnomeuimm
-Group:		Development/Libraries
+Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
@@ -87,16 +87,17 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS TODO
-%attr(755,root,root) %{_libdir}/libgnomeuimm*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libgnomeuimm-2.6.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libgnomeuimm-2.6.so.1
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libgnomeuimm*.so
-%{_libdir}/libgnomeuimm*.la
+%attr(755,root,root) %{_libdir}/libgnomeuimm-2.6.so
+%{_libdir}/libgnomeuimm-2.6.la
 %{_libdir}/%{name}-2.6
 %{_includedir}/%{name}-2.6
 %{_pkgconfigdir}/%{name}-2.6.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libgnomeuimm*.a
+%{_libdir}/libgnomeuimm-2.6.a
