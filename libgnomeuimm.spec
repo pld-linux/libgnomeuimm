@@ -1,12 +1,12 @@
 Summary:	C++ wrappers for libgnomeui
 Summary(pl.UTF-8):	Interfejsy C++ dla libgnomeui
 Name:		libgnomeuimm
-Version:	2.22.0
+Version:	2.24.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnomeuimm/2.22/%{name}-%{version}.tar.bz2
-# Source0-md5:	74b22fd00133e683ffa23b060d1862e7
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnomeuimm/2.24/%{name}-%{version}.tar.bz2
+# Source0-md5:	e4caf43ee829200bef9ad87415ae39a5
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
