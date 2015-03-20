@@ -2,7 +2,7 @@ Summary:	C++ wrappers for libgnomeui
 Summary(pl.UTF-8):	Interfejsy C++ dla libgnomeui
 Name:		libgnomeuimm
 Version:	2.28.0
-Release:	3
+Release:	4
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnomeuimm/2.28/%{name}-%{version}.tar.bz2
