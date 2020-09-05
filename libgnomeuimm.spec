@@ -1,24 +1,30 @@
+#
+# Conditional build:
+%bcond_without	static_libs	# static library
+
 Summary:	C++ wrappers for libgnomeui
 Summary(pl.UTF-8):	Interfejsy C++ dla libgnomeui
 Name:		libgnomeuimm
 Version:	2.28.0
-Release:	6
+Release:	7
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnomeuimm/2.28/%{name}-%{version}.tar.bz2
 # Source0-md5:	6c34dbe07cf9835c36f7d0b7bc38d4fb
-URL:		http://www.gnome.org/
+URL:		https://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gconfmm-devel >= 2.20.0
 BuildRequires:	gnome-vfsmm-devel >= 2.20.0
 # "We would need libbonobuimm to support Bonobo::Dock, but it's not worth the bother"
-#BuildRequires:	libbonobouimm-devel >= 1.3.6`
+#BuildRequires:	libbonobouimm-devel >= 2.5.0
 BuildRequires:	libglademm-devel >= 2.6.4
 BuildRequires:	libgnomecanvasmm-devel >= 2.20.0
 BuildRequires:	libgnomemm-devel >= 2.20.0
 BuildRequires:	libgnomeui-devel >= 2.19.1
+BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.4d
+BuildRequires:	m4
 BuildRequires:	pkgconfig
 Requires:	libgnomeui >= 2.19.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -68,7 +74,7 @@ Biblioteka statyczna libgnomeuimm.
 %{__autoconf}
 %{__automake}
 %configure \
-	--enable-static
+	%{?with_static_libs:--enable-static}
 
 %{__make}
 
@@ -77,6 +83,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libgnomeuimm-2.6.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -93,11 +101,12 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgnomeuimm-2.6.so
-%{_libdir}/libgnomeuimm-2.6.la
-%{_libdir}/%{name}-2.6
-%{_includedir}/%{name}-2.6
-%{_pkgconfigdir}/%{name}-2.6.pc
+%{_libdir}/libgnomeuimm-2.6
+%{_includedir}/libgnomeuimm-2.6
+%{_pkgconfigdir}/libgnomeuimm-2.6.pc
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libgnomeuimm-2.6.a
+%endif
